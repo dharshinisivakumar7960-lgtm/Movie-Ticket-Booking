@@ -1,0 +1,49 @@
+
+#include <stdio.h>
+
+int main() {
+    int movie, tickets;
+    float price, total;
+
+    printf("=== MOVIE TICKET BOOKING ===\n");
+    printf("1. Action Movie  - Rs. 180\n");
+    printf("2. Comedy Movie  - Rs. 150\n");
+    printf("3. Drama Movie   - Rs. 120\n");
+
+    printf("Select a movie (1-3): ");
+    scanf("%d", &movie);
+
+    switch (movie) {
+        case 1:
+            price = 180;
+            break;
+        case 2:
+            price = 150;
+            break;
+        case 3:
+            price = 120;
+            break;
+        default:
+            printf("Invalid movie selection!\n");
+            return 0;
+    }
+
+    printf("Enter number of tickets: ");
+    scanf("%d", &tickets);
+
+    if (tickets <= 0 || tickets > 20) {
+        printf("Please enter between 1 and 20 tickets.\n");
+        return 0;
+    }
+
+    total = price * tickets;
+
+    printf("\n=== BOOKING SUMMARY ===\n");
+    printf("Movie selection: %d\n", movie);
+    printf("Tickets booked: %d\n", tickets);
+    printf("Price per ticket: Rs. %.2f\n", price);
+    printf("Total amount: Rs. %.2f\n", total);
+    printf("Booking successful!\n");
+
+    return 0;
+}
